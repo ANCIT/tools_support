@@ -1,0 +1,65 @@
+name: Bug Report
+description: Report an issue in SmartWheels Eclipse Tools
+title: "[Bug] <short summary here>"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve SmartWheels tools! Please provide as much detail as possible below.
+        
+  - type: input
+    id: tool
+    attributes:
+      label: Affected Tool
+      description: Which tool is affected?
+      placeholder: e.g., smartwheels-genx or smartwheels-ar
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Provide a clear and concise description of the bug.
+      placeholder: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to help reproduce the issue.
+      placeholder: |
+        1. Open the application
+        2. Go to IOConfiguration page
+        3. Select a DIGITAL_INPUT peripheral
+        4. Use that in CAN Tx config
+        5. Return to IOConfiguration and try to uncheck it
+        6. It gets unchecked without any warning
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Tool Version
+      placeholder: e.g., v1.2.3
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments or Logs
+      description: Upload screenshots, logs, or `.ecux` files that help demonstrate the bug.
+      placeholder: Drag and drop or paste here.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Low (cosmetic or doesn't affect functionality)
+        - Medium (affects a feature, but has a workaround)
+        - High (blocks normal use, no workaround)
+        - Critical (app crashes, data loss, or major issue)
